@@ -14,26 +14,26 @@
         <h1>Registrace na letní dětský tábor</h1>
 
         <label for="jmeno" class="radek">Jméno:</label>
-        <input id="jmeno" type="text" th:field="${form.jmeno}"/>
+        <span id="jmeno" type="text" th:field="${form.jmeno}"/>
         <div class="error" th:if="${#fields.hasErrors('form.jmeno')}" th:errors="${form.jmeno}"></div>
 
         <label for="prijmeni" class="radek">Příjmení:</label>
-        <input id="prijmeni" type="text" th:field="${form.prijmeni}"/>
+        <span id="prijmeni" type="text" th:field="${form.prijmeni}"/>
         <div class="error" th:if="${#fields.hasErrors('form.prijmeni')}" th:errors="${form.prijmeni}"></div>
 
         <label for="datumNarozeni">Datum narození:</label>
-        <input id="datumNarozeni" type="date" th:field="${form.datumNarozeni}"/>
+        <span id="datumNarozeni" type="date" th:field="${form.datumNarozeni}"/>
         <div class="error" th:if="${#fields.hasErrors('form.datumNarozeni')}" th:errors="${form.datumNarozeni}"></div>
 
 
         <div class="radek">Pohlaví:</div>
         <div class="skupina">
             <div>
-                <input id="pohlavi1" type="radio" th:field="${form.pohlavi}" value="MUZ"/>
+                <span id="pohlavi1" type="radio" th:field="${form.pohlavi}" value="MUZ"/>
                 <label for="pohlavi1">chlapec</label>
             </div>
             <div>
-                <input id="pohlavi2" type="radio" th:field="${form.pohlavi}" value="ZENA"/>
+                <span id="pohlavi2" type="radio" th:field="${form.pohlavi}" value="ZENA"/>
                 <label for="pohlavi2">dívka</label>
             </div>
             <div class="error" th:if="${#fields.hasErrors('form.pohlavi')}" th:errors="${form.pohlavi}"></div>
@@ -42,27 +42,27 @@
         <div class="radek">Sporty(alespoň dva):</div>
         <div class="skupina">
             <div>
-                <input type="checkbox" th:field="${form.sport}" value="FOTBAL"/>
+                <span type="checkbox" th:field="${form.sport}" value="FOTBAL"/>
                 <label th:for="${#ids.prev('sport')}">Fotbal</label>
             </div>
             <div>
-                <input type="checkbox" th:field="${form.sport}" value="VOLEJBAL"/>
+                <span type="checkbox" th:field="${form.sport}" value="VOLEJBAL"/>
                 <label th:for="${#ids.prev('sport')}">Volejbal</label>
             </div>
             <div>
-                <input id="sport3" type="checkbox" name="hazena" th:field="${form.sport}" value="HAZENA"/>
+                <span id="sport3" type="checkbox" name="hazena" th:field="${form.sport}" value="HAZENA"/>
                 <label th:for="${#ids.prev('sport')}">H</label>
             </div>
             <div>
-                <input id="sport4" type="checkbox" name="plavani" th:field="${form.sport}" value="PLAVANI"/>
+                <span id="sport4" type="checkbox" name="plavani" th:field="${form.sport}" value="PLAVANI"/>
                 <label for="sport4">Plavání</label>
             </div>
             <div>
-                <input id="sport5" type="checkbox" name="beh" th:field="${form.sport}" value="BEH"/>
+                <span id="sport5" type="checkbox" name="beh" th:field="${form.sport}" value="BEH"/>
                 <label for="sport5">Běh</label>
             </div>
             <div>
-                <input id="sport6" type="checkbox" name="lezeni" th:field="${form.sport}" value="LEZENI"/>
+                <span id="sport6" type="checkbox" name="lezeni" th:field="${form.sport}" value="LEZENI"/>
                 <label for="sport6">Lezení</label>
             </div>
 
@@ -85,11 +85,11 @@
 
 
         <label for="email" class="radek">E-mail:</label>
-        <input id="email" type="email" th:field="${form.email}"/>
+        <span id="email" type="email" th:field="${form.email}"/>
         <div class="error" th:if="${#fields.hasErrors('form.email')}" th:errors="${form.email}"></div>
 
         <label for="telefon" class="radek">Telefon na rodiče:</label>
-        <input id="telefon" type="int" th:field="${form.telefon}"/>
+        <span id="telefon" type="int" th:field="${form.telefon}"/>
         <div class="error" th:if="${#fields.hasErrors('form.telefon')}" th:errors="${form.telefon}"></div>
 
 
