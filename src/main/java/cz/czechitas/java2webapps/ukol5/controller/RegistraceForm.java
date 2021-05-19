@@ -15,7 +15,6 @@ public class RegistraceForm {
     @NotBlank
     private String prijmeni;
     @NotNull
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate datumNarozeni;
     @NotNull
     private Pohlavi pohlavi;
@@ -24,7 +23,7 @@ public class RegistraceForm {
     @NotBlank
     private String turnus;
     private String email;
-
+    private String telefon;
 
     public String getEmail() {
         return email;
@@ -42,7 +41,7 @@ public class RegistraceForm {
         this.telefon = telefon;
     }
 
-    private String telefon;
+
 
     public String getJmeno() {
         return jmeno;
@@ -63,7 +62,7 @@ public class RegistraceForm {
     public LocalDate getDatumNarozeni() {
         return datumNarozeni;
     }
-
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     public void setDatumNarozeni(LocalDate datumNarozeni) {
         this.datumNarozeni = datumNarozeni;
     }
@@ -92,20 +91,11 @@ public class RegistraceForm {
         this.turnus = turnus;
     }
 
-  public Period getRokNarozeniDitete (){
-        return Period.between(datumNarozeni, LocalDate.now());
+  public int getRokNarozeniDitete (){
+      Period period = datumNarozeni.until(LocalDate.now());
+      return period.getYears();
 
   }
-public int getRokNarozeni(){
-        return getRokNarozeniDitete().getYears();
-}
 
-  /* public int rokNarození (){
-        return datumNarozeni.getYear();
-  }
 
-  public int getVekDitete(){
-        return LocalDate.now().getYear() - rokNarození();
-    }
-*/
 }

@@ -16,9 +16,11 @@ import java.util.Random;
  */
 
 @Controller
-@RequestMapping("/")
+
 public class RegistraceController {
+
   private final Random random = new Random();
+
 
   @GetMapping("")
   public ModelAndView index() {
@@ -39,8 +41,8 @@ public class RegistraceController {
       return "/formular";
     }
 
-    if (form.getRokNarozeni() < 9 || form.getRokNarozeni() >= 15) {
-      bindingResult.rejectValue("RokNarozeni", "", "Vaše dítě nelze na tábor přihlásit, z důvodu nepatřičného věku");
+    if (form.getRokNarozeniDitete() < 9 || form.getRokNarozeniDitete() >= 15) {
+      bindingResult.rejectValue("datumNarozeni", "", "Vaše dítě nelze na tábor přihlásit, z důvodu nepatřičného věku");
       return "/formular";
     }
 
@@ -52,8 +54,6 @@ public class RegistraceController {
             .addObject("turnus", form.getTurnus())
             .addObject("email", form.getEmail())
             .addObject("telefon", form.getTelefon());
-
-
 
   }
 }

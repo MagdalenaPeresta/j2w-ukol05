@@ -50,20 +50,20 @@
                 <label th:for="${#ids.prev('sport')}">Volejbal</label>
             </div>
             <div>
-                <input id="sport3" type="checkbox" name="hazena" th:field="${form.sport}" value="HAZENA"/>
-                <label th:for="${#ids.prev('sport')}">H</label>
+                <input  type="checkbox" th:field="${form.sport}" value="HAZENA"/>
+                <label th:for="${#ids.prev('sport')}">HÁZENÁ</label>
             </div>
             <div>
-                <input id="sport4" type="checkbox" name="plavani" th:field="${form.sport}" value="PLAVANI"/>
-                <label for="sport4">Plavání</label>
+                <input  type="checkbox" th:field="${form.sport}" value="PLAVANI"/>
+                <label th:for="${#ids.prev('sport')}">Plavání</label>
             </div>
             <div>
-                <input id="sport5" type="checkbox" name="beh" th:field="${form.sport}" value="BEH"/>
-                <label for="sport5">Běh</label>
+                <input type="checkbox" th:field="${form.sport}" value="BEH"/>
+                <label th:for="${#ids.prev('sport')}">Běh</label>
             </div>
             <div>
-                <input id="sport6" type="checkbox" name="lezeni" th:field="${form.sport}" value="LEZENI"/>
-                <label for="sport6">Lezení</label>
+                <input  type="checkbox" th:field="${form.sport}" value="LEZENI"/>
+                <label th:for="${#ids.prev('sport')}">Lezení</label>
             </div>
 
             <div class="error" th:if="${#fields.hasErrors('form.sport')}" th:errors="${form.sport}"></div>

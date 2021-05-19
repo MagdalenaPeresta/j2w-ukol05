@@ -9,93 +9,86 @@
 </head>
 <body class="p-3 mb-2 bg-success text-white">
 
-<div class="container">
+<div class="container" id="grey">
     <form class="registracniFormular" th:action="@{/}" method="post">
-        <h1>Registrace na letní dětský tábor</h1>
+        <h1>Registrace byla provedena</h1>
 
         <label for="jmeno" class="radek">Jméno:</label>
-        <span id="jmeno" type="text" th:field="${form.jmeno}"/>
-        <div class="error" th:if="${#fields.hasErrors('form.jmeno')}" th:errors="${form.jmeno}"></div>
+        <input id="jmeno" type="text" th:field="${form.jmeno}" readonly/>
+
 
         <label for="prijmeni" class="radek">Příjmení:</label>
-        <span id="prijmeni" type="text" th:field="${form.prijmeni}"/>
-        <div class="error" th:if="${#fields.hasErrors('form.prijmeni')}" th:errors="${form.prijmeni}"></div>
+        <input id="prijmeni" type="text" th:field="${form.prijmeni}" readonly/>
+
 
         <label for="datumNarozeni">Datum narození:</label>
-        <span id="datumNarozeni" type="date" th:field="${form.datumNarozeni}"/>
-        <div class="error" th:if="${#fields.hasErrors('form.datumNarozeni')}" th:errors="${form.datumNarozeni}"></div>
+        <input id="datumNarozeni" type="date" th:field="${form.datumNarozeni}" readonly/>
 
 
         <div class="radek">Pohlaví:</div>
         <div class="skupina">
             <div>
-                <span id="pohlavi1" type="radio" th:field="${form.pohlavi}" value="MUZ"/>
+                <input id="pohlavi1" type="radio" th:field="${form.pohlavi}" value="MUZ" disabled/>
                 <label for="pohlavi1">chlapec</label>
             </div>
             <div>
-                <span id="pohlavi2" type="radio" th:field="${form.pohlavi}" value="ZENA"/>
+                <input id="pohlavi2" type="radio" th:field="${form.pohlavi}" value="ZENA" disabled/>
                 <label for="pohlavi2">dívka</label>
             </div>
-            <div class="error" th:if="${#fields.hasErrors('form.pohlavi')}" th:errors="${form.pohlavi}"></div>
-        </div>
+
 
         <div class="radek">Sporty(alespoň dva):</div>
         <div class="skupina">
             <div>
-                <span type="checkbox" th:field="${form.sport}" value="FOTBAL"/>
+                <input type="checkbox" th:field="${form.sport}" value="FOTBAL" disabled/>
                 <label th:for="${#ids.prev('sport')}">Fotbal</label>
             </div>
             <div>
-                <span type="checkbox" th:field="${form.sport}" value="VOLEJBAL"/>
+                <input type="checkbox" th:field="${form.sport}" value="VOLEJBAL" disabled/>
                 <label th:for="${#ids.prev('sport')}">Volejbal</label>
             </div>
             <div>
-                <span id="sport3" type="checkbox" name="hazena" th:field="${form.sport}" value="HAZENA"/>
-                <label th:for="${#ids.prev('sport')}">H</label>
+                <input  type="checkbox" th:field="${form.sport}" value="HAZENA" disabled/>
+                <label th:for="${#ids.prev('sport')}">HÁZENÁ</label>
             </div>
             <div>
-                <span id="sport4" type="checkbox" name="plavani" th:field="${form.sport}" value="PLAVANI"/>
-                <label for="sport4">Plavání</label>
+                <input  type="checkbox" th:field="${form.sport}" value="PLAVANI" disabled/>
+                <label th:for="${#ids.prev('sport')}">Plavání</label>
             </div>
             <div>
-                <span id="sport5" type="checkbox" name="beh" th:field="${form.sport}" value="BEH"/>
-                <label for="sport5">Běh</label>
+                <input type="checkbox" th:field="${form.sport}" value="BEH" disabled/>
+                <label th:for="${#ids.prev('sport')}">Běh</label>
             </div>
             <div>
-                <span id="sport6" type="checkbox" name="lezeni" th:field="${form.sport}" value="LEZENI"/>
-                <label for="sport6">Lezení</label>
+                <input  type="checkbox" th:field="${form.sport}" value="LEZENI" disabled/>
+                <label th:for="${#ids.prev('sport')}">Lezení</label>
             </div>
 
-            <div class="error" th:if="${#fields.hasErrors('form.sport')}" th:errors="${form.sport}"></div>
-        </div>
 
 
 
 
 
         <label for="turnus" class="radek">Turnus:</label>
-        <select id="turnus" name="turnus" th:field="${form.turnus}">
+        <select id="turnus" name="turnus" th:field="${form.turnus}" disabled>
             <option value=""></option>
             <option value="1">5.-11. července</option>
             <option value="2">12.-17. července</option>
             <option value="3">18.-23. července</option>
         </select>
-        <div class="error" th:if="${#fields.hasErrors('form.turnus')}" th:errors="${form.turnus}"></div>
 
 
 
         <label for="email" class="radek">E-mail:</label>
-        <span id="email" type="email" th:field="${form.email}"/>
-        <div class="error" th:if="${#fields.hasErrors('form.email')}" th:errors="${form.email}"></div>
+        <input id="email" type="email" th:field="${form.email}" readonly/>
+
 
         <label for="telefon" class="radek">Telefon na rodiče:</label>
-        <span id="telefon" type="int" th:field="${form.telefon}"/>
-        <div class="error" th:if="${#fields.hasErrors('form.telefon')}" th:errors="${form.telefon}"></div>
+        <input id="telefon" type="int" th:field="${form.telefon}" readonly/>
 
 
-        <div class="radek controls">
-            <button class="btn btn-outline-warning btn-lg" type="submit">Přihlásit se</button>
-        </div>
+
+
 
 
     </form>
